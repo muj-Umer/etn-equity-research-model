@@ -7,6 +7,16 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <script type="module" crossorigin src="./assets/index-DfVxvT7N.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-DOb3NOQ2.css">
+    <script>
+      // GitHub Pages SPA routing fix - handles 404.html redirect
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
